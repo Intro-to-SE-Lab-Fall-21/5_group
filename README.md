@@ -10,7 +10,7 @@ There are three account types: Administrator, User, and Guest. The Users have th
 
 afgitonezero - Drew Ferrell
 
-CSmith1207 - Caleb
+CSmith1207 - Caleb Smith
 
 Swagatroni - Kenneth Thomas Jr
  
