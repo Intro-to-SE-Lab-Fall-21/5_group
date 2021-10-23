@@ -1,0 +1,35 @@
+{% extends "templates/base.html" %}
+{% block title %}Home{% endblock %}
+{% block main %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Index</title>
+</head>
+
+<div class="wrapper">
+  <div class="bg"></div>
+  <div class="header">
+    <div class="topnav">
+      <a href="https://www.google.com/">About</a>
+      <a href="http://localhost:80/createAccount">Create Account</a>
+      <a href="http://localhost:80/login">Login</a>
+      <img class="topnavimg" style="float: left" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+      <a style="float: left" href="http://localhost:80/">5 GROUP</a>
+    </div>
+  </div>
+  <div class="title-left">
+    OUTLOOK 2
+  </div>
+  <div class="footer" style="font-size: 30px">
+      <div class="button">
+        <button onclick="location.href = 'http://localhost:80/createAccount';" id="myButton" class="button button1">Create Account</button>
+      </div>
+    The next best thing since Outlook 365.
+  </div>
+</div>
+
+{% endblock %}
