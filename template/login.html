@@ -1,0 +1,44 @@
+{% extends "templates/base.html" %}
+{% block title %}Login{% endblock %}
+{% block main %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Login</title>
+</head>
+
+<div class="wrapper">
+  <div class="bg-left"></div>
+  <div class="header">
+    <div class="topnav">
+      <a href="https://www.google.com/">About</a>
+      <a href="http://localhost:80/createAccount">Create Account</a>
+      <a href="http://localhost:80/login">Login</a>
+      <img class="topnavimg" style="float: left" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+      <a style="float: left" href="http://localhost:80/">5 GROUP</a>
+    </div>
+  </div>
+  <div class="title-right">
+    Login
+  </div>
+  <div class="form-right">
+  <hr>
+  <form action="/login" method="POST">
+    <div class="form-group">
+      <label>Email:  </label>
+      <input type="text" class="form-control" id="email" name="email" placeholder="Create your Email">
+    </div>
+
+    <div class="form-group">
+      <label>Password:  </label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter a Password">
+    </div>
+  <button type="submit" class="form-btn">Login</button>
+  </form>
+  </div>
+</div>
+
+{% endblock %}
