@@ -1,0 +1,79 @@
+{% extends "templates/base.html" %}
+{% block title %}Email{% endblock %}
+{% block main %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<div class="wrapper">
+  <div class="header">
+  <div class="topnav">
+    <img class="topnavimg" style="float: left" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+    <a style="float: left" href="http://localhost:80/">5 GROUP</a>
+    <a style="float: left" href="https://www.google.com/">About</a>
+    <div class="search-container">
+      <form method="POST">
+          <input name="search">
+          <input type="submit">
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="title-left">
+    WELCOME! {{ user }}
+  </div>
+
+  <style>
+  table {
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: maroon;
+}
+</style>
+
+  <h2>Inbox</h2>
+  <table>
+    <tr>
+      <th></th>
+      <th>Subject</th>
+      <th>From</th>
+      <th>Message</th>
+    </tr>
+
+    {% for email in emails %}
+    <tr>
+      <td>
+        <div class="forward">
+          <button onclick="location.href = 'http://localhost:80/user_forward';" id="myButton2" class="button button1">Forward</button>
+        </div>
+      </td>
+      <td>{{ email.title }}</td>
+      <td>{{ email.from_addr }}</td>
+      <td>{{ email.body.split()[:20] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <div class="title-right" style="font-size: 30px">
+      <div class="button">
+        <button onclick="location.href = 'http://localhost:80/user_send';" id="myButton" class="button button1">Compose</button>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
